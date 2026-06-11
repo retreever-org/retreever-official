@@ -4,14 +4,14 @@ const WorkflowSection = () => {
     <div className="py-20 sm:py-24 lg:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         {/* HEADING */}
         <div className="text-center max-w-5xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-bold leading-tight tracking-tight">
             Your APIs already exist. Retreever makes them{" "}
-            <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
               Instantly Exploreable.
             </span>
           </h2>
 
-          <p className="mt-6 sm:mt-8 lg:mt-10 text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+          <p className="mt-6 sm:mt-8 lg:mt-10 text-gray-300 text-base sm:text-lg md:text-lg leading-relaxed max-w-4xl mx-auto">
             Generated directly from your running application — including
             endpoints, request models, validations, authentication flows, and
             runtime metadata.
@@ -20,7 +20,7 @@ const WorkflowSection = () => {
 
         {/* WORKFLOW CARD */}
         <div className="mt-14 sm:mt-16 lg:mt-20">
-          <div className="rounded-[20px] sm:rounded-[30px] bg-black px-4 sm:px-6 lg:px-10 py-6 sm:py-8">
+          <div className="rounded-[20px] sm:rounded-[30px] px-4 sm:px-6 lg:px-10 py-6 sm:py-8">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-6">
               {/* STEP 1 */}
               <div className="flex items-center gap-4 sm:gap-5">

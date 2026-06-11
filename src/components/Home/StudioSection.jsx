@@ -9,32 +9,32 @@ import AuthSvg from "../../assets/Rectangle 17 (1).svg";
 
 const ApiCatalogueSection = () => {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-10 lg:py-10">
+    <section className="w-full max-w-7xl mx-auto px-6 py-12">
       {/* Heading */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+      {/* <div className="text-center mb-8">
+        <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
           Your Studio in Seconds
         </h2>
-      </div>
+      </div> */}
 
       {/* ================= First Section ================= */}
-      <div className="rounded-[20px] lg:rounded-[28px] border-2 border-[#727272] bg-[#0b0b0b] p-5 sm:p-6 md:p-10">
-        <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-6 lg:gap-10 items-start">
+      <div className="rounded-[20px] lg:rounded-2xl border border-border-mute bg-surface-1 px-8 py-4">
+        <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-5 lg:gap-10 items-start">
           {/* LEFT SIDE */}
           <div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white leading-tight">
+            <h2 className="text-xl sm:text-2xl md:text-2xl font-medium text-text-primary leading-tight">
               Auto Discovered API
               <br />
               Catalogue
             </h2>
 
-            <p className="mt-4 text-sm sm:text-base text-gray-400 max-w-md leading-relaxed">
+            <p className="mt-4 text-sm text-text-mute max-w-md leading-relaxed">
               Every endpoint automatically grouped and organized, resolved
               directly from your application controllers and methods and other
               metadata.
             </p>
 
-            <div className="mt-6 sm:mt-8 rounded-xl overflow-hidden border border-gray-800">
+            <div className="mt-6 sm:mt-8 overflow-hidden">
               <img
                 src={DashboardLeft}
                 alt="API Catalogue"
@@ -45,8 +45,8 @@ const ApiCatalogueSection = () => {
           </div>
 
           {/* RIGHT SIDE */}
-          <div>
-            <div className="rounded-xl overflow-hidden border border-gray-800">
+          <div className="flex flex-col">
+            <div className="order-2 mt-6 overflow-hidden lg:order-1 lg:mt-0">
               <img
                 src={DashboardRight}
                 alt="API Testing"
@@ -55,52 +55,54 @@ const ApiCatalogueSection = () => {
               />
             </div>
 
-            <h2 className="mt-6 sm:mt-8 text-xl sm:text-2xl md:text-3xl font-semibold text-white leading-tight">
-              Test Ready Endpoints
-            </h2>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-xl font-medium leading-tight text-text-primary sm:text-2xl md:text-2xl lg:mt-8">
+                Test Ready Endpoints
+              </h2>
 
-            <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed max-w-2xl">
-              Retreever generates executable endpoints directly from your
-              runtime with request bodies, path variables, query params,
-              validations, authentication handling, and structured payload
-              support already available.
-            </p>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-mute">
+                Retreever generates executable endpoints directly from your
+                runtime with request bodies, path variables, query params,
+                validations, authentication handling, and structured payload
+                support already available.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* ================= Second Section ================= */}
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-5 mt-5 md:mt-10">
         {/* LEFT CARD */}
-        <div className="rounded-[28px] border-2 border-[#727272] bg-[#0b0b0b] p-5 lg:p-6">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight">
+        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-4">
+          <h2 className="text-xl sm:text-2xl md:text-2xl font-medium tracking-tight">
             One Click Environment Variable Automation
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed max-w-4xl">
+          <p className="mt-4 text-sm text-text-mute leading-relaxed max-w-4xl">
             Automatically extract values from API responses and reuse them
             throughout your workflow. Runtime Native intelligently maps response
             payloads into reusable variables, eliminating manual copy-paste and
             accelerating end-to-end testing.
           </p>
 
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mt-6 flex flex-col gap-4 md:flex-row md:items-stretch">
             {/* First Image */}
-            <div className="h-50 sm:h-60 md:h-70 overflow-hidden rounded-2xl bg-[#0b0b0b] flex items-center justify-center">
+            <div className="flex w-full items-center justify-center overflow-hidden md:h-46.25 md:flex-1">
               <img
                 src={ModalSvg}
                 alt="Environment Variables"
-                className="w-full h-full object-contain max-w-full"
+                className="h-auto w-full object-contain md:h-full"
                 draggable={false}
               />
             </div>
 
             {/* Second Image */}
-            <div className="h-50 sm:h-60 md:h-70 overflow-hidden rounded-2xl bg-[#0b0b0b] flex items-center justify-center">
+            <div className="flex w-full items-center justify-center overflow-hidden md:h-46.25 md:flex-1">
               <img
                 src={DocsSvg}
                 alt="Automation Modal"
-                className="w-full h-full object-contain max-w-full"
+                className="h-auto w-full object-contain md:h-full"
                 draggable={false}
               />
             </div>
@@ -108,22 +110,20 @@ const ApiCatalogueSection = () => {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="rounded-[28px] border-2 border-[#727272] bg-[#0b0b0b] p-5 lg:p-6">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight">
+        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-4 flex flex-col items-start">
+          <h2 className="text-xl sm:text-2xl md:text-2xl font-medium tracking-tight">
             Auto Generated Docs
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base text-gray-400 leading-relaxed">
-            Interactive API documentation generated directly from your running
-            application. Keep documentation accurate, live, and synchronized
-            with every deployment automatically.
+          <p className="mt-4 text-sm text-text-mute leading-relaxed">
+            Interactive API documentation — always aligned with your current deployment.
           </p>
 
-          <div className="mt-6 h-50 sm:h-55 md:h-65 overflow-hidden rounded-xl bg-[#050505] flex items-center justify-center">
+          <div className="mt-6 w-full overflow-hidden">
             <img
               src={VariableSvg}
               alt="Generated Documentation"
-              className="w-full h-full object-contain max-w-full"
+              className="h-auto w-full object-contain"
               draggable={false}
             />
           </div>
@@ -131,21 +131,21 @@ const ApiCatalogueSection = () => {
       </div>
 
       {/* ===========third section==================== */}
-      <div className="grid lg:grid-cols-[0.7fr_1.5fr] gap-6 mt-10">
+      <div className="grid lg:grid-cols-[0.7fr_1.5fr] gap-5 mt-5 md:mt-10">
         {/* LEFT CARD */}
-        <div className="rounded-[28px] border-2 border-[#727272] bg-[#0b0b0b] p-6 lg:p-8">
-          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">
+        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-4">
+          <h2 className="text-2xl md:text-2xl font-medium leading-tight">
             Always In Sync with
             <br />
             Runtime
           </h2>
 
-          <p className="mt-5 text-gray-400 text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-text-mute text-sm leading-relaxed">
             Generated directly from your running application — always live,
             always in sync.
           </p>
 
-          <div className="mt-8 rounded-xl overflow-hidden border border-gray-800">
+          <div className="mt-8 overflow-hidden">
             <img
               src={EcommerceSvg}
               alt="Runtime Sync"
@@ -156,19 +156,19 @@ const ApiCatalogueSection = () => {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="rounded-[28px] border-2 border-[#727272] bg-[#0b0b0b] p-6 lg:p-8">
-          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">
+        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-4">
+          <h2 className="text-2xl md:text-2xl font-medium leading-tight">
             Global Authorization
           </h2>
 
-          <p className="mt-5 text-gray-400 text-sm sm:text-base leading-relaxed max-w-4xl">
+          <p className="mt-4 text-text-mute text-sm leading-relaxed max-w-4xl">
             Configure authorization globally once and let Retreever
             automatically apply it across your testing workflow. Override
             authorization locally for specific endpoints whenever required
             without repeatedly configuring auth separately for every request.
           </p>
 
-          <div className="mt-8 rounded-xl overflow-hidden border border-gray-800">
+          <div className="mt-8 overflow-hidden">
             <img
               src={AuthSvg}
               alt="Global Authorization"
