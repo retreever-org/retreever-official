@@ -6,14 +6,16 @@ import Footer from "../components/Home/Footer";
 
 const Home = () => {
   return (
-    <section className="bg-app-background text-text-title overflow-hidden lg:px-16">
-      <HeroSection />
-      {/* <WorkflowSection /> */}
-      <StudioSection />
-      {/* <PlugPlaySection />
-      <RuntimeSection /> */}
-      <GetStartedSection />
-      <Footer />
+    <section className="home-page bg-app-background text-text-title overflow-hidden">
+      <div className="home-page__content">
+        <HeroSection />
+        {/* <WorkflowSection /> */}
+        <StudioSection />
+        {/* <PlugPlaySection />
+        <RuntimeSection /> */}
+        <GetStartedSection />
+        <Footer />
+      </div>
     </section>
   );
 };

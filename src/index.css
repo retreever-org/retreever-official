@@ -13,7 +13,7 @@
   --color-border-mute: #515151;
   --color-brand-blue-1: #4592fb;
   --color-brand-blue-2: #0672ff;
-  --color-surface-1: #0b0b0b;
+  --color-surface-1: #070808;
 }
 
 @theme {
@@ -29,7 +29,7 @@
   --color-border-mute: #515151;
   --color-brand-blue-1: #4592fb;
   --color-brand-blue-2: #0672ff;
-  --color-surface-1: #0b0b0b;
+  --color-surface-1: #070808;
 }
 
 html,
@@ -44,6 +44,22 @@ body,
   min-height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.home-page {
+  --home-page-gutter: 0.75rem;
+  --home-page-max-width: 64rem;
+}
+
+.home-page__content {
+  width: min(calc(100% - (var(--home-page-gutter) * 2)), var(--home-page-max-width));
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .home-page {
+    --home-page-gutter: clamp(1.25rem, 8vw, 8rem);
+  }
 }
 
 .hero-aurora {

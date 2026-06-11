@@ -6,7 +6,7 @@ const Footer = () => {
       {/* Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-75 blur-[140px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 pb-10">
+      <div className="relative z-10 w-full pt-10 pb-10">
         {/* Top Section */}
         <div className="flex flex-col xl:flex-row items-center xl:items-start text-center xl:text-left justify-between gap-16">
           {/* Left */}

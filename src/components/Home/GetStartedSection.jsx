@@ -35,7 +35,7 @@ const GetStartedSection = () => {
     <section className="relative overflow-hidden py-24 sm:py-28 lg:py-32">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-100 h-100 bg-blue-600/10 blur-[190px] rounded-full" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="relative z-10 w-full">
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-none tracking-tight">
