@@ -1,8 +1,10 @@
+import LogoSvg from "../../assets/favicon.svg";
+
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden border-t border-gray-800 sm:border-none">
       {/* Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] blur-[140px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-75 blur-[140px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 pb-10">
         {/* Top Section */}
@@ -11,22 +13,16 @@ const Footer = () => {
           <div className="max-w-xl flex flex-col items-center xl:items-start">
             {/* Logo */}
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.45)]">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
-                </svg>
+              <div className="w-13 h-13 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.45)]">
+                <img
+                  src={LogoSvg}
+                  alt="Retreever Logo"
+                  className="h-full w-full object-contain"
+                />
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-white">
-                  Retreever
-                </h2>
+                <h2 className="text-2xl font-bold text-white">Retreever</h2>
 
                 <p className="text-gray-500 text-sm">
                   Runtime Native API Studio
@@ -48,7 +44,7 @@ const Footer = () => {
 
             {/* CTA */}
             <div className="mt-10 flex justify-center xl:justify-start w-full">
-              <button className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-500 to-blue-700 px-8 py-4 shadow-[0_0_40px_rgba(37,99,235,0.35)] transition-all duration-300 hover:scale-105">
+              <button className="group relative overflow-hidden rounded-2xl bg-linear-to-r from-blue-500 to-blue-700 px-8 py-4 shadow-[0_0_40px_rgba(37,99,235,0.35)] transition-all duration-300 hover:scale-105">
                 <div className="relative flex items-center gap-3">
                   <span className="text-white text-lg font-semibold">
                     Start Building
@@ -73,9 +69,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20 text-center sm:text-left">
             {/* Product */}
             <div>
-              <h3 className="text-white text-xl font-semibold">
-                Product
-              </h3>
+              <h3 className="text-white text-xl font-semibold">Product</h3>
 
               <div className="mt-6 flex flex-col gap-5">
                 <a
@@ -110,9 +104,7 @@ const Footer = () => {
 
             {/* Resources */}
             <div>
-              <h3 className="text-white text-xl font-semibold">
-                Resources
-              </h3>
+              <h3 className="text-white text-xl font-semibold">Resources</h3>
 
               <div className="mt-6 flex flex-col gap-5">
                 <a
@@ -147,9 +139,7 @@ const Footer = () => {
 
             {/* Connect */}
             <div>
-              <h3 className="text-white text-xl font-semibold">
-                Connect
-              </h3>
+              <h3 className="text-white text-xl font-semibold">Connect</h3>
 
               <div className="mt-6 flex flex-col gap-5">
                 <a
@@ -185,7 +175,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="mt-20 h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="mt-20 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
 
         {/* Bottom */}
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-5 text-center">

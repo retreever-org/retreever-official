@@ -1,20 +1,17 @@
 
-import HeroSection from "../components/home/HeroSection";
-import WorkflowSection from "../components/home/WorkflowSection";
-import StudioSection from "../components/home/StudioSection";
-import PlugPlaySection from "../components/home/PlugPlaySection";
-import RuntimeSection from "../components/home/RuntimeSection";
-import GetStartedSection from "../components/home/GetStartedSection";
-import Footer from "../components/home/Footer";
+import HeroSection from "../components/Home/HeroSection";
+import StudioSection from "../components/Home/StudioSection";
+import GetStartedSection from "../components/Home/GetStartedSection";
+import Footer from "../components/Home/Footer";
 
 const Home = () => {
   return (
-    <section className="bg-black text-white overflow-hidden" >
+    <section className="bg-app-background text-text-title overflow-hidden lg:px-16">
       <HeroSection />
-      <WorkflowSection />
+      {/* <WorkflowSection /> */}
       <StudioSection />
-      <PlugPlaySection />
-      <RuntimeSection />
+      {/* <PlugPlaySection />
+      <RuntimeSection /> */}
       <GetStartedSection />
       <Footer />
     </section>
