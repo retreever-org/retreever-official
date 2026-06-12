@@ -38,7 +38,7 @@ const Layout = () => {
 
   return (
     <nav className="fixed left-0 top-0 z-50 w-full text-text-title">
-      <div className="w-full bg-app-background/25 px-2 py-2 shadow-[0_14px_50px_rgba(0,0,0,0.32)] backdrop-blur-xl sm:px-5 md:px-8">
+      <div className="site-nav__content bg-app-background/25 px-2 py-2 shadow-[0_14px_50px_rgba(0,0,0,0.32)] backdrop-blur-xl sm:px-5 md:px-0">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex min-w-0 items-center gap-1.5 sm:gap-2">
@@ -57,7 +57,7 @@ const Layout = () => {
             <div className="group relative">
               <button
                 type="button"
-                  className="flex items-center gap-1 rounded-lg px-0.5 py-2 transition-colors duration-300 hover:text-text-title group-focus-within:text-text-title sm:px-2"
+                className="flex items-center gap-1 rounded-lg px-0.5 py-2 transition-colors duration-300 hover:text-text-title group-focus-within:text-text-title sm:px-2"
               >
                 Runtimes
                 <ChevronDown

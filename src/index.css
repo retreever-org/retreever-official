@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 :root {
+  --page-gutter: 0.75rem;
+  --page-max-width: 64rem;
+  --nav-gutter: 0.75rem;
+  --nav-max-width: 90.625rem;
   --color-app-background: #020303;
   --color-shadow-blue: #0558df;
   --color-primary-blue: #0672ff;
@@ -13,7 +17,7 @@
   --color-border-mute: #515151;
   --color-brand-blue-1: #4592fb;
   --color-brand-blue-2: #0672ff;
-  --color-surface-1: #0B0C0D;
+  --color-surface-1: #0b0c0c;
 }
 
 @theme {
@@ -29,7 +33,7 @@
   --color-border-mute: #515151;
   --color-brand-blue-1: #4592fb;
   --color-brand-blue-2: #0672ff;
-  --color-surface-1: #0B0C0D;
+  --color-surface-1: #0b0c0c;
 }
 
 html,
@@ -47,8 +51,8 @@ body,
 }
 
 .home-page {
-  --home-page-gutter: 0.75rem;
-  --home-page-max-width: 64rem;
+  --home-page-gutter: var(--page-gutter);
+  --home-page-max-width: var(--page-max-width);
 }
 
 .home-page__content {
@@ -56,9 +60,21 @@ body,
   margin-inline: auto;
 }
 
+.site-nav__content {
+  width: 100%;
+}
+
 @media (min-width: 640px) {
-  .home-page {
-    --home-page-gutter: clamp(1.25rem, 8vw, 8rem);
+  :root {
+    --page-gutter: clamp(1.25rem, 8vw, 8rem);
+    --nav-gutter: clamp(0.75rem, 3vw, 2rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .site-nav__content {
+    width: min(calc(100% - (var(--nav-gutter) * 2)), var(--nav-max-width));
+    margin-inline: auto;
   }
 }
 
