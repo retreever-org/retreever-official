@@ -22,8 +22,8 @@ const GetStartedSection = () => {
       hover: "hover:border-blue-500/30",
     },
     {
-      title: "Instant Docs",
-      description: "Generated automatically",
+      title: "Test Instantly",
+      description: "Your embedded studio",
       icon: <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />,
       iconColor: "text-cyan-400",
       iconWrapper: "bg-cyan-500/10 border border-cyan-500/20",

@@ -18,7 +18,7 @@ const ApiCatalogueSection = () => {
       </div> */}
 
       {/* ================= First Section ================= */}
-      <div className="rounded-[20px] lg:rounded-2xl border border-border-mute bg-surface-1 px-8 py-4">
+      <div className="rounded-[20px] lg:rounded-2xl border border-border-mute bg-surface-1 px-8 py-8 lg:py-4">
         <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-5 lg:gap-10 items-start">
           {/* LEFT SIDE */}
           <div>
@@ -55,7 +55,7 @@ const ApiCatalogueSection = () => {
               />
             </div>
 
-            <div className="order-1 lg:order-2">
+            <div className="order-1 mt-8 lg:order-2 lg:mt-0">
               <h2 className="text-xl font-medium leading-tight text-text-primary sm:text-2xl md:text-2xl lg:mt-8">
                 Test Ready Endpoints
               </h2>
@@ -74,7 +74,7 @@ const ApiCatalogueSection = () => {
       {/* ================= Second Section ================= */}
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-5 mt-5 md:mt-10">
         {/* LEFT CARD */}
-        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-4">
+        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-8 lg:py-4">
           <h2 className="text-xl sm:text-2xl md:text-2xl font-medium tracking-tight">
             One Click Environment Variable Automation
           </h2>
@@ -110,7 +110,7 @@ const ApiCatalogueSection = () => {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-4 flex flex-col items-start">
+        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-8 flex flex-col items-start lg:py-4">
           <h2 className="text-xl sm:text-2xl md:text-2xl font-medium tracking-tight">
             Auto Generated Docs
           </h2>
@@ -133,7 +133,7 @@ const ApiCatalogueSection = () => {
       {/* ===========third section==================== */}
       <div className="grid lg:grid-cols-[0.7fr_1.5fr] gap-5 mt-5 md:mt-10">
         {/* LEFT CARD */}
-        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-4">
+        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-8 lg:py-4">
           <h2 className="text-2xl md:text-2xl font-medium leading-tight">
             Always In Sync with
             <br />
@@ -156,7 +156,7 @@ const ApiCatalogueSection = () => {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-4">
+        <div className="rounded-2xl border border-border-mute bg-surface-1 px-8 py-8 lg:py-4">
           <h2 className="text-2xl md:text-2xl font-medium leading-tight">
             Global Authorization
           </h2>
