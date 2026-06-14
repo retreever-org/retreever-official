@@ -33,6 +33,13 @@ const runtimeLinks = [
   ),
 }));
 
+const desktopRuntimeRows = [
+  [runtimeLinks[0], runtimeLinks[4]],
+  [runtimeLinks[1], runtimeLinks[5]],
+  [runtimeLinks[2], runtimeLinks[6]],
+  [runtimeLinks[3], null],
+];
+
 const Layout = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -85,30 +92,51 @@ const Layout = () => {
                     />
                   </button>
 
-                  <div className="pointer-events-none absolute left-1/2 top-full z-50 w-48 -translate-x-1/2 translate-y-2 pt-4 opacity-0 transition-all duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                    <div className="absolute inset-x-0 top-0 h-4" />
-                    <div className="grid gap-1 rounded-xl bg-app-background p-2 shadow-[0_18px_55px_rgba(0,0,0,0.45)] backdrop-blur-xl">
-                      {runtimeLinks.map(({ name, href, runtime }) => {
-                        const Icon = runtime?.icon;
+                  <div className="pointer-events-none absolute left-0 top-full z-50 w-136 max-w-[calc(100vw-2rem)] translate-y-2 pt-4 opacity-0 transition-all duration-200 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                    <div className="absolute left-0 top-0 h-4 w-full" />
+                    <div className="rounded-2xl bg-surface-2 p-4 shadow-[0_18px_55px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                      <table className="w-full border-separate border-spacing-x-8 border-spacing-y-1">
+                        <tbody>
+                          {desktopRuntimeRows.map((row, rowIndex) => (
+                            <tr key={rowIndex}>
+                              {row.map((item, columnIndex) => {
+                                if (!item) {
+                                  return (
+                                    <td
+                                      key={`${rowIndex}-${columnIndex}`}
+                                      className="w-1/2"
+                                    />
+                                  );
+                                }
 
-                        return (
-                          <a
-                            key={name}
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-[14px] text-text-title transition-colors duration-200 hover:bg-surface-1 hover:text-primary-blue"
-                          >
-                            {Icon && (
-                              <Icon
-                                className={`text-lg ${runtime.color}`}
-                                aria-hidden="true"
-                              />
-                            )}
-                            <span>{name}</span>
-                          </a>
-                        );
-                      })}
+                                const Icon = item.runtime?.icon;
+
+                                return (
+                                  <td
+                                    key={item.name}
+                                    className="w-1/2 align-middle"
+                                  >
+                                    <a
+                                      href={item.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[14px] text-text-title transition-colors duration-200 hover:bg-white/6 hover:text-primary-blue"
+                                    >
+                                      {Icon && (
+                                        <Icon
+                                          className={`text-lg ${item.runtime.color}`}
+                                          aria-hidden="true"
+                                        />
+                                      )}
+                                      <span>{item.name}</span>
+                                    </a>
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -145,7 +173,7 @@ const Layout = () => {
                 href="https://docs.retreever.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-text-title/90 px-2.5 py-1 text-[12px] text-text-title transition-colors duration-300 hover:bg-text-title hover:text-app-background sm:px-5 sm:text-[14px] md:px-6 md:py-2 md:text-[15px]"
+                className="rounded-lg border border-text-title/90 px-2.5 py-1 text-[12px] text-text-title transition-colors duration-300 hover:bg-text-title hover:text-app-background sm:px-5 sm:text-[14px] md:px-6 md:py-1.5 md:text-[15px]"
               >
                 Get Started
               </a>
@@ -162,17 +190,17 @@ const Layout = () => {
                 </button>
 
                 {open && (
-                  <div className="absolute right-0 top-full z-50 mt-2 w-48 rounded-xl bg-app-background p-2 shadow-[0_18px_55px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+                  <div className="absolute right-0 top-full z-50 mt-2 w-48 rounded-xl bg-surface-2 p-2 shadow-[0_18px_55px_rgba(0,0,0,0.45)] backdrop-blur-xl">
                     <div className="group relative">
                       <button
                         type="button"
-                        className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-text-title transition-colors duration-200 hover:bg-surface-1 hover:text-primary-blue"
+                        className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-text-title transition-colors duration-200 hover:bg-white/6 hover:text-primary-blue"
                       >
                         <span>Runtimes</span>
                         <ChevronDown strokeWidth={2} className="h-4 w-4" />
                       </button>
 
-                      <div className="mt-1 grid gap-1 rounded-lg bg-surface-1/60 p-1">
+                      <div className="mt-1 grid gap-1 rounded-lg bg-white/3 p-1">
                         {runtimeLinks.map(({ name, href }) => (
                           <a
                             key={name}
@@ -180,7 +208,7 @@ const Layout = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setOpen(false)}
-                            className="rounded-lg px-3 py-2 text-[14px] text-text-title transition-colors duration-200 hover:bg-app-background hover:text-primary-blue"
+                            className="rounded-lg px-3 py-2 text-[14px] text-text-title transition-colors duration-200 hover:bg-white/6 hover:text-primary-blue"
                           >
                             {name}
                           </a>
@@ -193,7 +221,7 @@ const Layout = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setOpen(false)}
-                      className="mt-1 block rounded-lg px-3 py-2.5 text-text-title transition-colors duration-200 hover:bg-surface-1 hover:text-primary-blue"
+                      className="mt-1 block rounded-lg px-3 py-2.5 text-text-title transition-colors duration-200 hover:bg-white/6 hover:text-primary-blue"
                     >
                       GitHub
                     </a>
@@ -201,7 +229,7 @@ const Layout = () => {
                     <Link
                       to="/security"
                       onClick={() => setOpen(false)}
-                      className="block rounded-lg px-3 py-2.5 text-text-title transition-colors duration-200 hover:bg-surface-1 hover:text-primary-blue"
+                      className="block rounded-lg px-3 py-2.5 text-text-title transition-colors duration-200 hover:bg-white/6 hover:text-primary-blue"
                     >
                       Security
                     </Link>
@@ -211,7 +239,7 @@ const Layout = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setOpen(false)}
-                      className="block rounded-lg px-3 py-2.5 text-text-title transition-colors duration-200 hover:bg-surface-1 hover:text-primary-blue"
+                      className="block rounded-lg px-3 py-2.5 text-text-title transition-colors duration-200 hover:bg-white/6 hover:text-primary-blue"
                     >
                       Help
                     </a>
