@@ -341,9 +341,9 @@ const tocItems = blocks
 
 const Security = () => {
   return (
-    <main className="min-h-screen bg-app-background px-4 pb-24 pt-28 text-text-primary sm:px-6 lg:px-16">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <article className="rounded-2xl border border-border-mute bg-surface-1/45 px-5 py-8 shadow-[0_24px_90px_rgba(0,0,0,0.28)] sm:px-8 lg:px-12">
+    <main className="min-h-screen overflow-x-hidden bg-app-background px-4 pb-24 pt-24 text-text-primary sm:px-6 lg:px-16">
+      <div className="mx-auto grid w-full min-w-0 max-w-7xl items-start gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-14">
+        <article className="min-w-0 overflow-hidden px-0 py-0">
           {blocks.map((block, index) => {
             if (block.type === "h1") {
               return (
@@ -384,7 +384,7 @@ const Security = () => {
 
             if (block.type === "p") {
               return (
-                <p key={index} className="mt-5 max-w-4xl text-[15px] leading-8 text-text-mute sm:text-[16px]">
+                <p key={index} className="mt-5 max-w-4xl break-words text-[15px] leading-7 text-text-mute sm:text-[16px] sm:leading-8">
                   {renderInline(block.text)}
                 </p>
               );
@@ -392,7 +392,7 @@ const Security = () => {
 
             if (block.type === "ul") {
               return (
-                <ul key={index} className="mt-5 max-w-4xl list-disc space-y-3 pl-6 text-[15px] leading-7 text-text-mute sm:text-[16px]">
+                <ul key={index} className="mt-5 max-w-4xl list-disc space-y-3 pl-5 text-[15px] leading-7 text-text-mute sm:pl-6 sm:text-[16px]">
                   {block.items.map((item) => (
                     <li key={item}>{renderInline(item)}</li>
                   ))}
@@ -402,7 +402,7 @@ const Security = () => {
 
             if (block.type === "ol") {
               return (
-                <ol key={index} className="mt-5 max-w-4xl list-decimal space-y-3 pl-6 text-[15px] leading-7 text-text-mute sm:text-[16px]">
+                <ol key={index} className="mt-5 max-w-4xl list-decimal space-y-3 pl-5 text-[15px] leading-7 text-text-mute sm:pl-6 sm:text-[16px]">
                   {block.items.map((item) => (
                     <li key={item}>{renderInline(item)}</li>
                   ))}
@@ -412,11 +412,11 @@ const Security = () => {
 
             if (block.type === "code") {
               return (
-                <div key={index} className="mt-5 max-w-4xl overflow-hidden rounded-xl border border-border-mute bg-app-background">
-                  <div className="border-b border-border-mute/70 px-4 py-2 font-mono text-xs uppercase tracking-[0.16em] text-text-mute">
+                <div key={index} className="mt-5 max-w-4xl min-w-0 overflow-hidden rounded-xl border border-border-mute bg-app-background">
+                  <div className="border-b border-border-mute/70 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-text-mute sm:px-4 sm:text-xs">
                     {block.language || "code"}
                   </div>
-                  <pre className="overflow-x-auto p-4 text-sm leading-7 text-text-primary">
+                  <pre className="overflow-x-auto p-3 text-xs leading-6 text-text-primary sm:p-4 sm:text-sm sm:leading-7">
                     <code>{block.code}</code>
                   </pre>
                 </div>
@@ -425,12 +425,12 @@ const Security = () => {
 
             if (block.type === "table") {
               return (
-                <div key={index} className="mt-6 overflow-x-auto rounded-xl border border-border-mute bg-app-background">
-                  <table className="min-w-[760px] border-collapse text-left text-sm text-text-mute">
+                <div key={index} className="mt-6 min-w-0 overflow-x-auto rounded-xl border border-border-mute bg-app-background">
+                  <table className="min-w-[640px] border-collapse text-left text-xs text-text-mute sm:min-w-[760px] sm:text-sm">
                     <thead className="bg-text-title/5 text-text-primary">
                       <tr>
-                        {block.header.map((cell) => (
-                          <th key={cell} className="border-b border-border-mute px-4 py-3 font-semibold">
+                        {block.header.map((cell, cellIndex) => (
+                          <th key={`${cell}-${cellIndex}`} className="border-b border-border-mute px-3 py-2.5 font-semibold sm:px-4 sm:py-3">
                             {renderInline(cell)}
                           </th>
                         ))}
@@ -440,7 +440,7 @@ const Security = () => {
                       {block.rows.map((row, rowIndex) => (
                         <tr key={`${row[0]}-${rowIndex}`} className="border-b border-border-mute/60 last:border-b-0">
                           {row.map((cell, cellIndex) => (
-                            <td key={`${cell}-${cellIndex}`} className="align-top px-4 py-3 leading-6">
+                            <td key={`${cell}-${cellIndex}`} className="align-top px-3 py-2.5 leading-5 sm:px-4 sm:py-3 sm:leading-6">
                               {renderInline(cell)}
                             </td>
                           ))}
@@ -456,8 +456,8 @@ const Security = () => {
           })}
         </article>
 
-        <aside className="hidden lg:block">
-          <div className="sticky top-24 rounded-2xl border border-border-mute bg-app-background p-5 shadow-[0_20px_70px_rgba(0,0,0,0.32)]">
+        <aside className="hidden self-start lg:block">
+          <div className="fixed top-24 w-[320px] border-l border-border-mute/65 pl-6">
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-text-title">
               On this page
             </h2>
