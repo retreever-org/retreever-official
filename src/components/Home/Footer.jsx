@@ -134,10 +134,10 @@ const ConnectIcon = ({ name }) => {
 
 const Footer = () => {
   return (
-    <footer className="site-footer__content relative overflow-hidden border-t border-border-mute/35">
+    <footer className="relative overflow-hidden border-t border-border-mute/35">
       <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-[42rem] -translate-x-1/2 rounded-full bg-primary-blue/8 blur-[120px]" />
 
-      <div className="relative z-10 px-4 pb-10 pt-14 sm:px-6 sm:pt-16 lg:px-8">
+      <div className="site-footer__content relative z-10 px-4 pb-10 pt-14 sm:px-6 sm:pt-16 lg:px-8">
         <div className="grid min-w-0 gap-12 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:items-start lg:gap-14 xl:gap-18">
           <div className="flex min-w-0 flex-col items-start">
             <div className="flex items-center gap-4">

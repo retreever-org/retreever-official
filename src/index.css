@@ -2,9 +2,9 @@
 
 :root {
   --page-gutter: 1rem;
-  --page-max-width: 112rem;
+  --page-max-width: 90rem;
   --nav-gutter: 0.75rem;
-  --nav-max-width: 112rem;
+  --nav-max-width: 90rem;
   --color-app-background: #020303;
   --color-shadow-blue: #0558df;
   --color-primary-blue: #0672ff;

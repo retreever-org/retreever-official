@@ -2,7 +2,6 @@
 import HeroSection from "../components/Home/HeroSection";
 import StudioSection from "../components/Home/StudioSection";
 import GetStartedSection from "../components/Home/GetStartedSection";
-import Footer from "../components/Home/Footer";
 
 const pageSpotlightBackground =
   "radial-gradient(560px circle at var(--page-light-x, 50%) var(--page-light-y, 20rem), rgba(255,255,255,0.055), rgba(185,185,185,0.035) 34%, rgba(6,114,255,0.018) 54%, transparent 76%)";
@@ -53,9 +52,6 @@ const Home = () => {
         {/* <PlugPlaySection />
         <RuntimeSection /> */}
         <GetStartedSection />
-      </div>
-      <div className="relative z-10">
-        <Footer />
       </div>
     </section>
   );

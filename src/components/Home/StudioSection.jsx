@@ -72,8 +72,8 @@ const StudioCard = ({ children, className = "" }) => {
 };
 
 const LitFrame = ({ children, className = "" }) => (
-  <div className={`relative box-border overflow-hidden rounded-xl ${className}`}>
-    <div className="relative z-10 rounded-[inherit]">{children}</div>
+  <div className={className}>
+    {children}
   </div>
 );
 

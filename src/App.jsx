@@ -6,9 +6,11 @@ import Runtime from "./pages/Runtime";
 import Security from "./pages/Security";
 import GetStarted from "./pages/GetStarted";
 import Github from "./pages/Github";
+import Footer from "./components/Home/Footer";
+
 const App = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-app-background text-text-title">
       <Router>
         <Layout />
         <div>
@@ -22,6 +24,7 @@ const App = () => {
             <Route path="/github" element={<Github />} />
           </Routes>
         </div>
+        <Footer />
       </Router>
     </div>
   );
