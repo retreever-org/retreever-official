@@ -1,11 +1,14 @@
 import { PlayCircle } from "lucide-react";
 import DashboardSvg from "../../assets/image 7.svg";
 
-const borderGlowBackground =
-  "radial-gradient(360px circle at var(--hero-card-x, 50%) var(--hero-card-y, 50%), rgba(6,114,255,0.62), rgba(0,197,174,0.48) 34%, rgba(6,114,255,0.16) 58%, transparent 78%)";
+const spotlightLinearGradient =
+  "linear-gradient(112deg, rgb(from var(--color-shadow-blue) r g b / 0.88) 0%, color-mix(in srgb, var(--color-shadow-blue) 65%, var(--color-shadow-green) 35%) 58%, rgb(from var(--color-shadow-green) r g b / 0.7) 100%)";
 
-const cardGlowBackground =
-  "radial-gradient(580px circle at var(--hero-card-x, 50%) var(--hero-card-y, 50%), rgba(255,255,255,0.055), rgba(6,114,255,0.06) 32%, transparent 68%)";
+const spotlightBlobStyle = {
+  left: "var(--hero-card-x, 50%)",
+  top: "var(--hero-card-y, 50%)",
+  backgroundImage: spotlightLinearGradient,
+};
 
 const maskStyle = {
   WebkitMask:
@@ -44,15 +47,23 @@ const HeroExperienceCard = () => {
         />
         <div
           className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          style={{ background: cardGlowBackground }}
-        />
+        >
+          <div
+            className="absolute h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[140px]"
+            style={spotlightBlobStyle}
+          />
+        </div>
         <div
-          className="pointer-events-none absolute inset-0 z-20 rounded-[inherit] p-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 z-20 overflow-hidden rounded-[inherit] p-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
-            background: borderGlowBackground,
             ...maskStyle,
           }}
-        />
+        >
+          <div
+            className="absolute h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[36px]"
+            style={spotlightBlobStyle}
+          />
+        </div>
 
         <img
           src={DashboardSvg}

@@ -6,11 +6,14 @@ import DocsSvg from "../../assets/Group 11.svg";
 import EcommerceSvg from "../../assets/Rectangle 43.svg";
 import AuthSvg from "../../assets/Rectangle 17 (1).svg";
 
-const spotlightBackground =
-  "radial-gradient(320px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), rgba(6,114,255,0.95), rgba(0,197,174,0.72) 36%, rgba(6,114,255,0.24) 58%, transparent 78%)";
+const spotlightLinearGradient =
+  "linear-gradient(112deg, rgb(from var(--color-shadow-blue) r g b / 0.9) 0%, color-mix(in srgb, var(--color-shadow-blue) 65%, var(--color-shadow-green) 35%) 58%, rgb(from var(--color-shadow-green) r g b / 0.72) 100%)";
 
-const cardGlowBackground =
-  "radial-gradient(520px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), rgba(6,114,255,0.1), rgba(0,197,174,0.075) 34%, transparent 66%)";
+const spotlightBlobStyle = {
+  left: "var(--spotlight-x, 50%)",
+  top: "var(--spotlight-y, 50%)",
+  backgroundImage: spotlightLinearGradient,
+};
 
 const StudioCard = ({ children, className = "" }) => {
   const handlePointerMove = (event) => {
@@ -24,21 +27,6 @@ const StudioCard = ({ children, className = "" }) => {
       "--spotlight-y",
       `${event.clientY - bounds.top}px`
     );
-
-    event.currentTarget
-      .querySelectorAll("[data-lit-frame]")
-      .forEach((frame) => {
-        const frameBounds = frame.getBoundingClientRect();
-
-        frame.style.setProperty(
-          "--frame-spotlight-x",
-          `${event.clientX - frameBounds.left}px`
-        );
-        frame.style.setProperty(
-          "--frame-spotlight-y",
-          `${event.clientY - frameBounds.top}px`
-        );
-      });
   };
 
   return (
@@ -58,40 +46,34 @@ const StudioCard = ({ children, className = "" }) => {
       />
       <div
         className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ background: cardGlowBackground }}
-      />
+      >
+        <div
+          className="absolute h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
+          style={spotlightBlobStyle}
+        />
+      </div>
       <div
-        className="pointer-events-none absolute inset-0 z-20 rounded-[inherit] p-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 z-20 overflow-hidden rounded-[inherit] p-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
-          background: spotlightBackground,
           WebkitMask:
             "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
           WebkitMaskComposite: "xor",
           maskComposite: "exclude",
         }}
-      />
+      >
+        <div
+          className="absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[32px]"
+          style={spotlightBlobStyle}
+        />
+      </div>
       <div className="relative z-10">{children}</div>
     </div>
   );
 };
 
 const LitFrame = ({ children, className = "" }) => (
-  <div
-    data-lit-frame
-    className={`relative box-border overflow-hidden rounded-xl border border-transparent ${className}`}
-  >
+  <div className={`relative box-border overflow-hidden rounded-xl ${className}`}>
     <div className="relative z-10 rounded-[inherit]">{children}</div>
-    <div
-      className="pointer-events-none absolute inset-0 z-20 rounded-[inherit] p-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-      style={{
-        background:
-          "radial-gradient(320px circle at var(--frame-spotlight-x, -999px) var(--frame-spotlight-y, -999px), rgba(6,114,255,0.9), rgba(0,197,174,0.68) 36%, rgba(6,114,255,0.22) 58%, transparent 78%)",
-        WebkitMask:
-          "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-        WebkitMaskComposite: "xor",
-        maskComposite: "exclude",
-      }}
-    />
   </div>
 );
 

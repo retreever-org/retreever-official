@@ -2,9 +2,9 @@
 
 :root {
   --page-gutter: 1rem;
-  --page-max-width: 64rem;
+  --page-max-width: 112rem;
   --nav-gutter: 0.75rem;
-  --nav-max-width: 90.625rem;
+  --nav-max-width: 112rem;
   --color-app-background: #020303;
   --color-shadow-blue: #0558df;
   --color-primary-blue: #0672ff;
@@ -70,8 +70,8 @@ body,
 
 @media (min-width: 640px) {
   :root {
-    --page-gutter: clamp(1.25rem, 8vw, 8rem);
-    --nav-gutter: clamp(0.75rem, 3vw, 2rem);
+    --page-gutter: clamp(1.25rem, 4vw, 4rem);
+    --nav-gutter: clamp(0.75rem, 2.5vw, 2.5rem);
   }
 }
 

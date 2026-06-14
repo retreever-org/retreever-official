@@ -9,8 +9,8 @@ const HeroSection = () => {
     >
       <div className="w-full">
         <div className="relative w-full text-center">
-        <div className="hero-aurora-blue pointer-events-none absolute left-[14%] top-[34%] h-36 w-40 rounded-full bg-shadow-blue/18 blur-[58px] md:left-[26%] md:top-[20%] md:h-100 md:w-120 md:bg-blue-300/12 md:blur-[120px]" />
-        <div className="pointer-events-none absolute right-[-18%] top-[-18%] h-60 w-72 rounded-full bg-shadow-green/10 blur-[100px] md:right-[-42%] md:top-[-80%] md:h-140 md:w-160 md:bg-shadow-green/11 md:blur-[160px]" />
+        <div className="hero-aurora-blue pointer-events-none absolute left-[14%] top-[34%] h-36 w-40 rounded-full bg-shadow-blue/18 blur-[58px] md:left-[26%] md:top-[20%] md:h-100 md:w-120 md:bg-shadow-blue/20 md:blur-[120px]" />
+        <div className="pointer-events-none absolute right-[-18%] top-[-18%] h-60 w-72 rounded-full bg-shadow-green/10 blur-[100px] md:right-[-42%] md:top-[-80%] md:h-140 md:w-180 md:bg-shadow-green/15 md:blur-[160px]" />
 
         <div className="relative z-10">
           <h2 className="text-[clamp(28px,7vw,40px)] font-bold leading-none tracking-[-0.04em] text-text-title md:text-[52px] xl:text-[65px]">
