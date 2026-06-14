@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --page-gutter: 0.75rem;
+  --page-gutter: 1rem;
   --page-max-width: 64rem;
   --nav-gutter: 0.75rem;
   --nav-max-width: 90.625rem;
