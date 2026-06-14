@@ -3,7 +3,10 @@ import DashboardSvg from "../../assets/image 7.svg";
 
 const HeroSection = () => {
   return (
-    <div className="relative flex w-full flex-col items-center justify-start overflow-visible bg-app-background pt-38 pb-8 sm:min-h-screen sm:pt-37.5 sm:pb-0">
+    <div
+      id="home"
+      className="relative flex w-full flex-col items-center justify-start overflow-visible bg-app-background pt-38 pb-8 sm:min-h-screen sm:pt-37.5 sm:pb-0"
+    >
       <div className="w-full">
         <div className="relative w-full text-center">
         <div className="hero-aurora-blue pointer-events-none absolute left-[14%] top-[34%] h-36 w-40 rounded-full bg-shadow-blue/18 blur-[58px] md:left-[26%] md:top-[20%] md:h-100 md:w-120 md:bg-blue-300/12 md:blur-[120px]" />

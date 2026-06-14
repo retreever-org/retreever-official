@@ -32,7 +32,10 @@ const GetStartedSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden py-24 sm:py-28 lg:py-32">
+    <section
+      id="get-started"
+      className="relative scroll-mt-28 overflow-hidden py-24 sm:py-28 lg:py-32"
+    >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-100 h-100 bg-blue-600/10 blur-[190px] rounded-full" />
 
       <div className="relative z-10 w-full">

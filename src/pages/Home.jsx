@@ -14,8 +14,8 @@ const Home = () => {
         {/* <PlugPlaySection />
         <RuntimeSection /> */}
         <GetStartedSection />
-        <Footer />
       </div>
+      <Footer />
     </section>
   );
 };

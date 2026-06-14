@@ -64,6 +64,10 @@ body,
   width: 100%;
 }
 
+.site-footer__content {
+  width: 100%;
+}
+
 @media (min-width: 640px) {
   :root {
     --page-gutter: clamp(1.25rem, 8vw, 8rem);
@@ -72,7 +76,8 @@ body,
 }
 
 @media (min-width: 768px) {
-  .site-nav__content {
+  .site-nav__content,
+  .site-footer__content {
     width: min(calc(100% - (var(--nav-gutter) * 2)), var(--nav-max-width));
     margin-inline: auto;
   }

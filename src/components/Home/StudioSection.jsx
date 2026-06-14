@@ -9,7 +9,7 @@ import AuthSvg from "../../assets/Rectangle 17 (1).svg";
 
 const ApiCatalogueSection = () => {
   return (
-    <section className="w-full py-12">
+    <section id="studio" className="w-full scroll-mt-28 py-12">
       {/* Heading */}
       {/* <div className="text-center mb-8">
         <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
