@@ -48,7 +48,7 @@ const StudioCard = ({ children, className = "" }) => {
         className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       >
         <div
-          className="absolute h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
+          className="absolute h-104 w-104 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
           style={spotlightBlobStyle}
         />
       </div>
