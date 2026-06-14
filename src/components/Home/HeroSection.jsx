@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className="relative flex w-full flex-col items-center justify-start overflow-visible bg-app-background pt-38 pb-8 sm:min-h-screen sm:pt-37.5 sm:pb-0"
+      className="relative flex w-full flex-col items-center justify-start overflow-visible pt-38 pb-8 sm:min-h-screen sm:pt-37.5 sm:pb-0"
     >
       <div className="w-full">
         <div className="relative w-full text-center">
@@ -55,7 +55,10 @@ const HeroSection = () => {
 
       <div className="relative mt-14 w-full md:mt-28">
 
-        <div className="relative overflow-hidden rounded-[20px] border border-border-mute shadow-[0_18px_70px_rgba(0,0,0,0.35)] md:rounded-3xl">
+        <div
+          data-page-spotlight-zone
+          className="relative overflow-hidden rounded-[20px] border border-border-mute shadow-[0_18px_70px_rgba(0,0,0,0.35)] md:rounded-3xl"
+        >
           <img src={DashboardSvg} alt="Dashboard Preview" className="w-full" />
 
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[48%] bg-linear-to-b from-app-background/0 via-app-background/45 to-app-background/70" />
